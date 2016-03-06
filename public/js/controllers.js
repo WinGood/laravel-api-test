@@ -2,6 +2,14 @@ var bookWishlistAppControllers = angular.module('bookWishlistAppControllers', [
 	'bookWishlistAppServices'
 ]);
 
+bookWishlistAppControllers.controller('NotifyController', ['$scope', 'notifyService', function($scope, notifyService) {
+  $scope.getNotify = function() {
+    notifyService.subscribe(function(response) {
+      alert(response);
+    });
+  }
+}]);
+
 bookWishlistAppControllers.controller('LoginController', ['$scope', '$location', 'userService', function ($scope, $location, userService) {
 
 	$scope.login = function() {

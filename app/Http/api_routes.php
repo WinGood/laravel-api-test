@@ -13,4 +13,6 @@ $api->version('v1', function ($api) {
 		$api->resource('books', 'App\Api\V1\Controllers\BookController');
     });
 
+    $api->post('subscribe', 'App\Api\V1\Controllers\NotifyController@subscribe');
+
 });

@@ -20,10 +20,14 @@ bookWishlistApp.config(['$routeProvider', function($routeProvider) {
 	    templateUrl: 'partials/signup.html',
 	    controller: 'SignupController'
 	}).
-	when('/', {
-	    templateUrl: 'partials/index.html',
-	    controller: 'MainController'
+	when('/notify', {
+	    templateUrl: 'partials/notify.html',
+	    controller: 'NotifyController'
 	}).
+  when('/', {
+    templateUrl: 'partials/index.html',
+    controller: 'MainController'
+  }).
 	otherwise({
 	    redirectTo: '/'
 	});

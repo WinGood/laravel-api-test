@@ -150,7 +150,8 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class
+        App\Providers\RouteServiceProvider::class,
+        'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider'
     ],
 
     /*
@@ -205,6 +206,7 @@ return [
          */
         'JWTAuth'       => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory'    => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'PushNotification' => 'Davibennun\LaravelPushNotification\Facades\PushNotification'
     ],
 
 ];

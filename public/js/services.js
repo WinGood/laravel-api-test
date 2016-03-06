@@ -75,6 +75,26 @@ bookWishlistAppServices.factory('userService', ['$http', 'localStorageService', 
 
 }]);
 
+bookWishlistAppServices.factory('notifyService', ['Restangular', function(Restangular) {
+
+  var data = {
+    title: 'test title'
+  };
+
+  function subscribe(onSuccess) {
+    Restangular.all('api/subscribe').post(data).then(function(response) {
+      console.log(response);
+
+      onSuccess(response);
+    });
+  }
+
+  return {
+    subscribe: subscribe
+  }
+
+}]);
+
 bookWishlistAppServices.factory('bookService', ['Restangular', 'userService', function(Restangular, userService) {
 
 	function getAll(onSuccess, onError){
